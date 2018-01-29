@@ -15,13 +15,12 @@ public class Config extends PropertiesConfiguration {
 		if(instance == null){
 			try
 			{
-			    instance = new Configurations().properties(new File("config.properties"));
+			    instance = new Configurations().properties(new File(System.getProperty("resources_path") + "/config.properties"));
 			}
 			catch (ConfigurationException cex)
 			{
 			    cex.printStackTrace();
 			}
-			System.setProperty("logfile.name","./logs/log.txt");
 		}
 		
 		return instance;

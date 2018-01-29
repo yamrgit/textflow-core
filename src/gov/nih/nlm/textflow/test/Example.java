@@ -9,6 +9,7 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 
 import gov.nih.nlm.textflow.config.Config;
+import gov.nih.nlm.textflow.config.Initializer;
 import gov.nih.nlm.textflow.models.TextFlow;
 
 public class Example {
@@ -16,6 +17,8 @@ public class Example {
 	private static HashSet<String> _stopw = new HashSet<String>();
 	
 	public static void main(String[] args) {
+		
+		Initializer.run(args, Example.class);
 		
 		readStopwords();
 		
